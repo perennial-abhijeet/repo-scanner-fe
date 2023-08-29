@@ -6,7 +6,7 @@ import RepoList from "./pages/RepoList/RepoList";
 import SingleRepo from "./pages/SingleRepoDetails/SingleRepo";
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_GRAPHQL_URL,
+  uri: process.env.REACT_APP_BACKEND_URL,
 });
 
 const App = () => (
