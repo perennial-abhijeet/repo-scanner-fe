@@ -28,7 +28,7 @@ const RepoList = () => {
       `}
     >
       {({ loading, error, data }) => {
-        if (loading) return <Loader />;
+        if (loading) return <Loader text="Loading...." />;
         if (error) return <ErrorComponent message={error.message} />;
 
         return (
@@ -65,7 +65,7 @@ const RepoList = () => {
                           className="btn btn-secondary"
                           onClick={() => handleClick(item.name)}
                         >
-                          Details
+                          Scan
                         </button>
                       </td>
                     </tr>

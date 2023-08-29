@@ -30,17 +30,17 @@ const SingleRepo = () => {
       `}
     >
       {({ loading, error, data }) => {
-        if (loading) return <Loader />;
+        if (loading) return <Loader text="Scanning..." />;
         if (error) return <ErrorComponent message={error.message} />;
         return (
           <>
             <div className="container mt-5">
               <h1 className="bg-primary text-white p-3 text-center">
-                Repository Details
+                Scan Details
               </h1>
               <div className="container mt-5">
                 <div className="border rounded p-3">
-                  <h4>The repo details are as follows:</h4>
+                  <h4>The scan details are as follows:</h4>
                   <table className="table table-bordered">
                     <tbody className="bg-info text-white col-3">
                       <tr>
@@ -95,6 +95,16 @@ const SingleRepo = () => {
                       </tr>
                     </tbody>
                   </table>
+                  {data.repoScannerDetails.yml_content ? (
+                    <>
+                      <div className="yml-content">
+                        <pre>
+                          <strong>{data.repoScannerDetails.yml_content}</strong>
+                        </pre>
+                      </div>
+                      <br />
+                    </>
+                  ) : null}
                 </div>
               </div>
             </div>
